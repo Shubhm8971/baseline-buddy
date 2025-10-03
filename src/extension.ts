@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { BaselineHoverProvider } from './hoverProvider';
+import { BaselineQuickFixProvider } from './quickFixProvider';
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Baseline Buddy is now active!');
@@ -14,13 +15,21 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.window.showInformationMessage('✅ Quick Fix applied (placeholder)!');
   });
 
-  // Hover provider (applies to JavaScript & TypeScript files for now)
+  // Hover provider (JS + TS)
   const hoverProvider = vscode.languages.registerHoverProvider(
     ['javascript', 'typescript'],
     new BaselineHoverProvider()
   );
 
-  context.subscriptions.push(helloWorld, quickFix, hoverProvider);
+  // Quick Fix provider (JS + TS)
+  const quickFixProvider = vscode.languages.registerCodeActionsProvider(
+    ['javascript', 'typescript'],
+    new BaselineQuickFixProvider(),
+    { providedCodeActionKinds: [vscode.CodeActionKind.QuickFix] }
+  );
+
+  // Push all disposables
+  context.subscriptions.push(helloWorld, quickFix, hoverProvider, quickFixProvider);
 }
 
 export function deactivate() {
