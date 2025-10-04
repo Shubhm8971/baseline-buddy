@@ -1,0 +1,19 @@
+{
+  "flexgap": {
+    "support": {
+      "chrome": "✅",
+      "firefox": "✅",
+      "safari": "❌",
+      "edge": "✅"
+    },
+    "fallback": "Use margin-based grid spacing"
+  },
+  "textwrap": {
+    "support": {
+      "chrome": "✅",
+      "firefox": "✅",
+      "safari": "✅",
+      "edge": "✅"
+    }
+  }
+}

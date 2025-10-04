@@ -1,16 +1,32 @@
 {
-	"compilerOptions": {
-		"module": "Node16",
-		"target": "ES2022",
-		"lib": [
-			"ES2022"
-		],
-		"sourceMap": true,
-		"rootDir": "src",
-		"strict": true,   /* enable all strict type-checking options */
-		/* Additional Checks */
-		// "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
-		// "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
-		// "noUnusedParameters": true,  /* Report errors on unused parameters. */
-	}
+  "compilerOptions": {
+    /* Core settings */
+    "target": "es2020",                     // modern JS output
+    "module": "commonjs",                   // required for VS Code extensions
+    "lib": ["es2020"],
+
+    /* Paths */
+    "rootDir": "src",
+    "outDir": "out",
+
+    /* Module resolution */
+    "moduleResolution": "node",
+    "resolveJsonModule": true,              // ✅ allows importing .json
+    "esModuleInterop": true,                // ✅ enables clean default imports
+    "allowSyntheticDefaultImports": true,
+
+    /* Strictness */
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+
+    /* Source maps for debugging */
+    "sourceMap": true,
+
+    /* Incremental build */
+    "skipLibCheck": true,
+    "incremental": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", ".vscode-test"]
 }
