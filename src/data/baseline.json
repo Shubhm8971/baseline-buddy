@@ -1,0 +1,310 @@
+{
+  "flex-gap": {
+    "id": "flex-gap",
+    "title": "Flexbox gap",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial","edge":"supported"},
+    "fallback": "/* fallback: use margins */\n.flex-container > * { margin-right: 20px; }\n.flex-container > *:last-child { margin-right: 0; }"
+  },
+  "css-has": {
+    "id": "css-has",
+    "title": "CSS :has() pseudo-class",
+    "support": {"chrome":"supported","firefox":"partial","safari":"supported"},
+    "fallback": "/* fallback: use JS to add class based on selector */\nconst els = document.querySelectorAll('parentSelector');\nels.forEach(el => { if (el.querySelector('childSelector')) el.classList.add('has-child'); });"
+  },
+  "css-subgrid": {
+    "id": "css-subgrid",
+    "title": "CSS Subgrid",
+    "support": {"chrome":"partial","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: use regular grid + manual widths */"
+  },
+  "backdrop-filter": {
+    "id": "backdrop-filter",
+    "title": "backdrop-filter",
+    "support": {"chrome":"supported","firefox":"partial","safari":"supported"},
+    "fallback": "/* fallback: use semi-transparent overlay */\n.overlay { background: rgba(255,255,255,0.6); }"
+  },
+  "html-dialog": {
+    "id": "html-dialog",
+    "title": "<dialog> element",
+    "support": {"chrome":"supported","firefox":"partial","safari":"supported"},
+    "fallback": "/* fallback: modal div + role=dialog */\n<div class='dialog' role='dialog'></div>"
+  },
+  "input-date": {
+    "id": "input-date",
+    "title": "<input type='date'>",
+    "support": {"chrome":"supported","firefox":"partial","safari":"partial"},
+    "fallback": "/* fallback: use JS datepicker library like flatpickr */"
+  },
+  "js-intl": {
+    "id": "js-intl",
+    "title": "Intl.DateTimeFormat / Intl APIs",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: use Intl polyfill or date-fns */"
+  },
+  "navigator-clipboard": {
+    "id": "navigator-clipboard",
+    "title": "navigator.clipboard API",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: document.execCommand('copy') */\nfunction fallbackCopy(text){ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }"
+  },
+  "websocket": {
+    "id": "websocket",
+    "title": "WebSocket API",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: long-polling / socket.io fallback */"
+  },
+  "web-animations": {
+    "id": "web-animations",
+    "title": "Web Animations API",
+    "support": {"chrome":"supported","firefox":"partial","safari":"partial"},
+    "fallback": "/* fallback: use CSS animations or requestAnimationFrame */"
+  },
+  "grid-template-areas": {
+    "id": "grid-template-areas",
+    "title": "CSS Grid Template Areas",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: use flex layout or manual grid positioning */"
+  },
+  "position-sticky": {
+    "id": "position-sticky",
+    "title": "CSS position: sticky",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: use JS scroll event to simulate sticky */"
+  },
+  "clip-path": {
+    "id": "clip-path",
+    "title": "CSS clip-path",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: use mask-image or SVG shapes */"
+  },
+  "pointer-events": {
+    "id": "pointer-events",
+    "title": "CSS pointer-events",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: manually disable JS event listeners */"
+  },
+  "scroll-behavior": {
+    "id": "scroll-behavior",
+    "title": "CSS scroll-behavior",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: use JS scrollIntoView with smooth */"
+  },
+  "object-fit": {
+    "id": "object-fit",
+    "title": "CSS object-fit",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: use background-image and object positioning */"
+  },
+  "will-change": {
+    "id": "will-change",
+    "title": "CSS will-change",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: remove will-change, use simpler CSS */"
+  },
+  "display-contents": {
+    "id": "display-contents",
+    "title": "CSS display: contents",
+    "support": {"chrome":"supported","firefox":"partial","safari":"partial"},
+    "fallback": "/* fallback: wrap children in extra container */"
+  },
+  "text-decoration-skip-ink": {
+    "id": "text-decoration-skip-ink",
+    "title": "CSS text-decoration-skip-ink",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: use border-bottom instead of underline */"
+  },
+  "shape-outside": {
+    "id": "shape-outside",
+    "title": "CSS shape-outside",
+    "support": {"chrome":"supported","firefox":"partial","safari":"partial"},
+    "fallback": "/* fallback: use float and margins */"
+  },
+  "css-overflow-anchor": {
+    "id": "css-overflow-anchor",
+    "title": "CSS overflow-anchor",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: set overflow-anchor:none on container */"
+  },
+  "focus-visible": {
+    "id": "focus-visible",
+    "title": ":focus-visible pseudo-class",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: always show focus with JS class */"
+  },
+  "lazy-loading": {
+    "id": "lazy-loading",
+    "title": "img loading='lazy'",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: use IntersectionObserver polyfill */"
+  },
+  "web-share": {
+    "id": "web-share",
+    "title": "Web Share API",
+    "support": {"chrome":"supported","firefox":"partial","safari":"supported"},
+    "fallback": "/* fallback: show custom share buttons */"
+  },
+  "service-worker": {
+    "id": "service-worker",
+    "title": "Service Worker",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: skip offline caching */"
+  },
+  "fetch": {
+    "id": "fetch",
+    "title": "Fetch API",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: use XMLHttpRequest */"
+  },
+  "requestAnimationFrame": {
+    "id": "requestAnimationFrame",
+    "title": "requestAnimationFrame",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: use setTimeout(fn,16) */"
+  },
+  "CSS-variables": {
+    "id": "CSS-variables",
+    "title": "CSS Custom Properties",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: use preprocessor variables (Sass/LESS) */"
+  },
+  "es6-modules": {
+    "id": "es6-modules",
+    "title": "ES6 Modules",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: use CommonJS modules */"
+  },
+  "webgl": {
+    "id": "webgl",
+    "title": "WebGL",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: show canvas 2D */"
+  },
+  "local-storage": {
+    "id": "local-storage",
+    "title": "localStorage API",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: use cookies */"
+  },
+  "session-storage": {
+    "id": "session-storage",
+    "title": "sessionStorage API",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: use cookies */"
+  },
+  "index-db": {
+    "id": "index-db",
+    "title": "IndexedDB",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: use localStorage */"
+  },
+  "promise": {
+    "id": "promise",
+    "title": "Promise API",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: use callback functions */"
+  },
+  "async-await": {
+    "id": "async-await",
+    "title": "Async/Await",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: use Promises */"
+  },
+  "template-element": {
+    "id": "template-element",
+    "title": "<template> element",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: dynamically insert DOM */"
+  },
+  "shadow-dom": {
+    "id": "shadow-dom",
+    "title": "Shadow DOM",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: use namespaced CSS or JS encapsulation */"
+  },
+  "custom-elements": {
+    "id": "custom-elements",
+    "title": "Custom Elements",
+    "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+    "fallback": "/* fallback: use JS class simulation */"
+  },
+  "import-maps": {
+    "id": "import-maps",
+    "title": "Import Maps",
+    "support": {"chrome":"supported","firefox":"partial","safari":"partial"},
+    "fallback": "/* fallback: manually map modules */"
+  },
+  "modulepreload": {
+    "id": "modulepreload",
+    "title": "<link rel='modulepreload'>",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: load scripts manually */"
+  },
+  "css-logical": {
+    "id": "css-logical",
+    "title": "CSS Logical Properties",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: use physical CSS properties */"
+  },
+  "css-env": {
+    "id": "css-env",
+    "title": "CSS env() variables",
+    "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+    "fallback": "/* fallback: use fixed padding/margin values */"
+  }
+  ,
+"object-position": {
+  "id": "object-position",
+  "title": "CSS object-position",
+  "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+  "fallback": "/* fallback: adjust using margins or background positioning */"
+},
+"aspect-ratio": {
+  "id": "aspect-ratio",
+  "title": "CSS aspect-ratio",
+  "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+  "fallback": "/* fallback: use padding-top trick or JS */"
+},
+"scroll-snap": {
+  "id": "scroll-snap",
+  "title": "CSS scroll-snap",
+  "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+  "fallback": "/* fallback: use JS scroll snapping */"
+},
+"object-view-box": {
+  "id": "object-view-box",
+  "title": "SVG viewBox attribute",
+  "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+  "fallback": "/* fallback: manually scale SVG with CSS */"
+},
+"dialog-polyfill": {
+  "id": "dialog-polyfill",
+  "title": "Dialog polyfill",
+  "support": {"chrome":"supported","firefox":"partial","safari":"partial"},
+  "fallback": "/* fallback: use modal div + JS focus trap */"
+},
+"animation-play-state": {
+  "id": "animation-play-state",
+  "title": "CSS animation-play-state",
+  "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+  "fallback": "/* fallback: use JS animation control */"
+},
+"backface-visibility": {
+  "id": "backface-visibility",
+  "title": "CSS backface-visibility",
+  "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+  "fallback": "/* fallback: hide elements manually with JS */"
+},
+"css-contain": {
+  "id": "css-contain",
+  "title": "CSS contain property",
+  "support": {"chrome":"supported","firefox":"supported","safari":"partial"},
+  "fallback": "/* fallback: restructure DOM to isolate content */"
+},
+"css-filter": {
+  "id": "css-filter",
+  "title": "CSS filter",
+  "support": {"chrome":"supported","firefox":"supported","safari":"supported"},
+  "fallback": "/* fallback: pre-process images or use SVG filter */"
+}
+
+}
